@@ -136,7 +136,7 @@ class HomeScreen extends StatelessWidget {
                         itemCount: 5,
                         ignoreGestures: true,
                         itemPadding:
-                            const EdgeInsets.symmetric(horizontal: 4.0),
+                            const EdgeInsets.symmetric(horizontal: 1.0),
                         itemBuilder: (context, _) => Icon(
                           Icons.star,
                           color: Theme.of(context).primaryColor,
