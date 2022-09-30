@@ -153,7 +153,10 @@ class HomeScreen extends StatelessWidget {
                             size: 20.0,
                             color: Colors.black,
                           ),
-                          Text('${restaurant.city}, Indonesia'),
+                          SizedBox(
+                              width: 120,
+                              child: Text('${restaurant.city}, Indonesia',
+                                  overflow: TextOverflow.ellipsis)),
                         ],
                       ),
                       ElevatedButton(

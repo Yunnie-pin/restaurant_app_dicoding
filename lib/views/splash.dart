@@ -8,7 +8,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
-nextRoute: '/menu_resto',
+      nextRoute: '/menu_resto',
       splash: const Icon(
         Icons.place,
         size: 60.0,
@@ -16,36 +16,8 @@ nextRoute: '/menu_resto',
       ),
       splashTransition: SplashTransition.rotationTransition,
       backgroundColor: Theme.of(context).primaryColor,
-      animationDuration: const Duration(seconds: 3), nextScreen: const HomeScreen(),
-
-      // child: Scaffold(
-      //   body: Container(
-      //     color: const Color.fromARGB(255, 140, 3, 3),
-      //     child: Center(
-      //         child: Row(
-      //       mainAxisAlignment: MainAxisAlignment.center,
-      //       children: <Widget>[
-      //         const Icon(
-      //           Icons.place,
-      //           size: 60.0,
-      //           color: Colors.white,
-      //         ),
-      //         Column(
-      //           mainAxisAlignment: MainAxisAlignment.center,
-      //           crossAxisAlignment: CrossAxisAlignment.start,
-      //           children: [
-      //             Text('Restaurant App',
-      //                 style: GoogleFonts.montserrat(
-      //                     textStyle: const TextStyle(
-      //                         color: Colors.white, fontSize: 24))),
-      //             const Text('Aplikasi list restoran lokal',
-      //                 style: TextStyle(color: Colors.white70, fontSize: 16))
-      //           ],
-      //         ),
-      //       ],
-      //     )),
-      //   ),
-      // ),
+      animationDuration: const Duration(seconds: 3),
+      nextScreen: const HomeScreen(),
     );
   }
 }
