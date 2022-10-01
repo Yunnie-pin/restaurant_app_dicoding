@@ -41,6 +41,7 @@ dependencies:
   search_page: ^2.2.0
   animated_splash_screen: ^1.3.0
   page_transition: ^2.0.9
+  sizer: ^2.0.15
 
 dev_dependencies:
   flutter_test:

@@ -95,11 +95,11 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: <Widget>[
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  width: 130,
+                  width: (MediaQuery.of(context).size.width) * 1 / 2,
                   height: 100,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -113,61 +113,61 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      SizedBox(
-                        width: 150,
-                        child: Text(
-                          restaurant.name,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            fontSize: 18.0,
+                      const SizedBox(height: 8),
+                      Center(
+                        child: SizedBox(
+                          width: 150,
+                          child: Center(
+                            child: Text(
+                              restaurant.name,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                fontSize: 18.0,
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                      RatingBar.builder(
-                        initialRating: restaurant.rating,
-                        itemSize: 20,
-                        minRating: 1,
-                        direction: Axis.horizontal,
-                        allowHalfRating: true,
-                        itemCount: 5,
-                        ignoreGestures: true,
-                        itemPadding:
-                            const EdgeInsets.symmetric(horizontal: 1.0),
-                        itemBuilder: (context, _) => Icon(
-                          Icons.star,
-                          color: Theme.of(context).primaryColor,
-                          size: 20.0,
-                        ),
-                        onRatingUpdate: (rating) {
-                          null;
-                        },
-                      ),
-                      Row(
-                        children: <Widget>[
-                          const Icon(
-                            Icons.place,
+                      Center(
+                        child: RatingBar.builder(
+                          initialRating: restaurant.rating,
+                          itemSize: 20,
+                          minRating: 1,
+                          direction: Axis.horizontal,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          ignoreGestures: true,
+                          itemPadding:
+                              const EdgeInsets.symmetric(horizontal: 1.0),
+                          itemBuilder: (context, _) => Icon(
+                            Icons.star,
+                            color: Theme.of(context).primaryColor,
                             size: 20.0,
-                            color: Colors.black,
                           ),
-                          SizedBox(
-                              width: 120,
-                              child: Text('${restaurant.city}, Indonesia',
-                                  overflow: TextOverflow.ellipsis)),
-                        ],
+                          onRatingUpdate: (rating) {
+                            null;
+                          },
+                        ),
                       ),
-                      ElevatedButton(
-                        style: ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll(
-                                Theme.of(context).primaryColor)),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/detailresto',
-                              arguments: restaurant);
-                        },
-                        child: const Text('Selengkapnya...'),
+                      Center(
+                        child: Text('${restaurant.city}, Indonesia',
+                            overflow: TextOverflow.ellipsis),
+                      ),
+                      Center(
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStatePropertyAll(
+                                  Theme.of(context).primaryColor)),
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/detailresto',
+                                arguments: restaurant);
+                          },
+                          child: const Text('Selengkapnya...'),
+                        ),
                       )
                     ],
                   ),
